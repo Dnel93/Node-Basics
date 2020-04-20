@@ -1,4 +1,4 @@
-console.log('Hola mundo');
+console.log('hello world');
 
 let i = 0;
 
@@ -12,4 +12,4 @@ setInterval(() => {
     }
 }, 1000);
 
-console.log("Tercera instrucción :)");
+console.log("Third instruction :)");

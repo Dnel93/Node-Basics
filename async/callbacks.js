@@ -1,25 +1,25 @@
 
-function hola(nombre, miCallback) {
+function hi(name, myCallback) {
     setTimeout(() => {
-        console.log(`Hola ${nombre}`)
-        miCallback(nombre);
+        console.log(`hi ${name}`)
+        myCallback(name);
     }, 1500);
 }
 
-function adios(nombre, otroCallback) {
+function bye(name, anotherCallback) {
     setTimeout(() => {
-        console.log(`Adiós ${nombre}`);
-        otroCallback();
+        console.log(`Bye ${name}`);
+        anotherCallback();
     },1000);
 }
 
-console.log('Iniciando proceso...');
+console.log('Starting process...');
 
-// hola("Daniel", () => {});
-// adios("Daniel", () => {});
+// hi("Daniel", () => {});
+// bye("Daniel", () => {});
 
-hola("Daniel", (nombre) => {
-    adios(nombre, () =>{
-        console.log('Terminando proceso...');
+hi("Daniel", (name) => {
+    bye(name, () =>{
+        console.log('Process completed...');
     })
 });

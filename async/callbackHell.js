@@ -1,45 +1,45 @@
 
-function hola(nombre, miCallback) {
+function hi(name, myCallback) {
     setTimeout(() => {
-        console.log(`Hola ${nombre}`)
-        miCallback(nombre);
+        console.log(`hi ${name}`)
+        myCallback(name);
     }, 1500);
 }
 
-function hablar(callbackHablar) {
+function speak(callbackspeak) {
     setTimeout(() => {
         console.log("bla bla bla...");
-        callbackHablar();
+        callbackspeak();
     }, 100);
 }
 
-function adios(nombre, otroCallback) {
+function bye(name, anotherCallback) {
     setTimeout(() => {
-        console.log(`Adiós ${nombre}`);
-        otroCallback();
+        console.log(`Bye ${name}`);
+        anotherCallback();
     },1000);
 }
 
-function conversacion(nombre, veces, callback) {
-    hablar(() => {
-        if(veces > 0) {
-            conversacion(nombre, --veces, callback);
+function conversation(name, times, callback) {
+    speak(() => {
+        if(times > 0) {
+            conversation(name, --times, callback);
         } else {
-            adios(nombre, callback);
+            bye(name, callback);
         }
     })
 }
 // --
 
-console.log('Iniciando proceso...');
+console.log('Starting process...');
 
-hola("Daniel", nombre => conversacion(nombre, 3, () => {console.log("Proceso terminado...")}));
+hi("Daniel", name => conversation(name, 3, () => {console.log("Process finished...")}));
 
-// hola("Daniel", (nombre) => {
-//     hablar(() => {
-//         hablar(() => {
-//             hablar(() => {
-//                 adios(nombre, () =>{
+// hi("Daniel", (name) => {
+//     speak(() => {
+//         speak(() => {
+//             speak(() => {
+//                 bye(name, () =>{
 //                     console.log('Terminando proceso...');
 //                 });
 //             });

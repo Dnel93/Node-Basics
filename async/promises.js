@@ -1,41 +1,41 @@
 
-function hola(nombre) {
+function hi(name) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log(`Hola ${nombre}`);
-            resolve(nombre);
+            console.log(`hi ${name}`);
+            resolve(name);
         }, 1500);
     });
 }
 
-function hablar(nombre) {
+function speak(name) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log('bla bla bla...');
-            // resolve(nombre);
-            reject('Ups.. hay un error');
+            // resolve(name);
+            reject("Ups.. there's an error");
         },1000)
     });
 }
 
-function adios(nombre) {
+function bye(name) {
     return new Promise((resolve, reject) => {
-        console.log(`Adios ${nombre}`);
+        console.log(`bye ${name}`);
         resolve()
     },1000);
 }
 
 // --
 
-console.log('Iniciando proceso...');
+console.log('Starting process...');
 
-hola("Daniel")
-    .then(hablar)
-    .then(adios)
+hi("Daniel")
+    .then(speak)
+    .then(bye)
     .then(() => {
-        console.log('Terminando el proceso...');
+        console.log('Process completed...');
     })
     .catch(error => {
-        console.error("Ha habido un error >=|");
+        console.error("An error has ocurred >=|");
         console.log(error);
     });

@@ -1,37 +1,37 @@
-async function hola(nombre) {
+async function hi(name) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log(`Hola ${nombre}`);
-            resolve(nombre);
+            console.log(`hi ${name}`);
+            resolve(name);
         }, 1500);
     });
 }
 
-async function hablar(nombre) {
+async function speak(name) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log('bla bla bla...');
-            // resolve(nombre);
-            resolve('Ups.. hay un error');
+            // resolve(name);
+            resolve('Ups.. an error has ocurred');
         },1000)
     });
 }
 
-async function adios(nombre) {
+async function bye(name) {
     return new Promise((resolve, reject) => {
-        console.log(`Adios ${nombre}`);
+        console.log(`bye ${name}`);
         resolve()
     },1000);
 }
 
 // --
 async function main() {
-    let nombre = await hola("Daniel");
-    await hablar();
-    hablar();
-    hablar();
-    await hablar();
-    await adios(nombre);
+    let name = await hi("Daniel");
+    await speak();
+    speak();
+    speak();
+    await speak();
+    await bye(name);
 }
 
 console.log("Empezamos el proceso...");
